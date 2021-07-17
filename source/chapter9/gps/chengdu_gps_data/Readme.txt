@@ -1,0 +1,1 @@
+test_gps2xy.rar is a package, which contain some source code for visual studio 2005, I use it to generate the benchmark point for chengdu. so, for common reader, there is no need to know how it work. But if you have enough interesting, you can hack it by yourself. I may have no time to answer any related questiong. Enjoy yourself. Thank you!

@@ -1,0 +1,131 @@
+file  acccli
+help set
+help set history
+set history size
+set history size 100
+set history size 500
+set history save 
+set history arm.linux.gdb.history
+set history filename arm.linux.gdb.history
+target remote 202.115.26.236:9000
+break 52
+c
+n
+l
+break 72
+c
+bt
+info address 0x400e07a4
+help info 
+info target 
+help info
+info stack 
+x/i 0x400e07a4
+quit
+info target 
+shell arm-linux-gcc -g -o acccli acccli_3.c 
+file  acccli
+target remote 202.115.26.92:9000
+target remote 202.115.26.92:9000
+break main 
+c
+n
+l
+p svr_addr 
+bt 
+l 56,
+n
+p acc_val 
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val 
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val 
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val 
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val 
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val 
+bt 
+list 61
+list 61,
+next
+next
+print new_acc_x
+print new_acc_y
+l
+n
+p line 
+n
+p new_acc_x
+p new_acc_y
+next
+p line
+n
+list ,
+bt
+l 71,
+n
+shell man 2 write
+quit
+shell vim .gdbinit 
+shell vim arm.linux.gdb.history 
+ls
+l
+n
+l
+l
+break 72
+c
+n
+n
+c
+quit
+l
+next
+p old_acc_x
+p old_acc_y
+n
+print acc_val.x
+print acc_val.y
+print acc_val.y
+print acc_val.y
+print acc_val.x
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val
+p acc_val
+p acc_val
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val
+p read(acc_fd, &acc_val, sizeof(acc_val))
+p acc_val
+info breakpoints 
+dis 
+info breakpoints 
+c
+quit
+l
+b 43
+c
+c
+next
+print acc_val 
+next
+p old_acc_x
+p old_acc_y
+p new_acc_x
+p new_acc_y
+p new_acc_x - old_acc_x
+quit
+break 43
+continue 
+next
+print acc_val 
+next
+next
+print new_acc_x
+print new_acc_y
+next
+print new_acc_x - old_acc_x 
+print new_acc_y - old_acc_y
+quit

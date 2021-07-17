@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <math.h>
+
+struct TestStruct_t {
+    int	a;
+    float b;
+    char s[5];
+};
+
+union TestUnion_t {
+    int c;
+    float d;
+    struct TestStruct_t embStruct;
+};
+
+enum TestEnum_t {
+    RED = 0,
+    GREEN,
+    BLUE,
+};
+
+struct TestStruct_t retStruct(void);
+union TestUnion_t retUnion(void);
+enum TestEnum_t retEnum(void);
+
+int main(int argc, char *argv[])
+{
+    /*
+    struct TestStruct_t	testStruct;
+    union TestUnion_t	testUnion;
+    enum TestEnum_t	testEnum;
+    
+    testStruct = retStruct();
+    testUnion = retUnion();
+    testEnum = retEnum();
+
+    int p;
+    for (p=1; p<10; p++) {
+	printf("pow(0.1, %d)=%f\n", p, pow(0.1, p));
+    }
+
+    float f;
+    printf("input a float for testing:");
+    scanf("%f", &f);
+    printf("the float is:%f\n", f);
+    */
+    int fd = open("test.c", O_RDONLY);
+    if (fd < 0) {
+	perror("error:");
+	return (-1);
+    }
+
+    return(0);
+}
+
+struct TestStruct_t
+retStruct(void)
+{
+    struct TestStruct_t rtnStruct;
+
+    rtnStruct.a = 1;
+    rtnStruct.b = 2.0;
+    strncpy(rtnStruct.s, "cyc", 5);
+    return(rtnStruct);
+}
+
+union TestUnion_t
+retUnion(void)
+{
+    union TestUnion_t rtnUnion;
+
+    rtnUnion.embStruct.a = 5;
+    rtnUnion.embStruct.b = 6.0;
+    strncpy(rtnUnion.embStruct.s, "emb", 5);
+    return(rtnUnion);
+}
+
+enum TestEnum_t
+retEnum(void)
+{
+    enum TestEnum_t rtnEnum;
+
+    rtnEnum = GREEN;
+    return(rtnEnum);
+}

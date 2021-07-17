@@ -1,0 +1,13 @@
+1. acccli.c should be compiled as following:
+
+	arm-linux-gcc -g -o acccli acccli.c
+
+2. copy acccli to sitsang platform in NFS or anything else.
+
+3. in sitsang platform, run command as this:
+
+	gdbserver 202.115.26.224:9000 acccli
+
+	or
+
+	gdbserver /dev/ttyS1 acccli

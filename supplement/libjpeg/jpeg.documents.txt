@@ -1,0 +1,73 @@
+JPEG file format documents
+--------------------------
+
+The official standard for JPEG image compression is not available on-line.
+To get it, you have to order a paper copy from ANSI; it's not cheap.
+Ordering information is attached below.  If you are not in the USA, you
+should try your national ISO member organization first.
+
+A better source of information is the textbook "JPEG Still Image Data
+Compression Standard" by William B. Pennebaker and Joan L. Mitchell,
+published by Van Nostrand Reinhold, 1993, ISBN 0-442-01272-1.  638 pages,
+price US$59.95.  This book includes the complete text of the ISO JPEG
+standards (DIS 10918-1 and draft DIS 10918-2).  Unless you really need a
+certified official copy of the standard, the textbook is a much better deal
+than purchasing the standard directly: it's cheaper and includes a lot of
+useful explanatory material.
+
+The JPEG standard does NOT define a concrete image file format, only a
+family of compression algorithms.  The Independent JPEG Group recommends
+that one of these two file formats be used for JPEG-compressed images:
+    JFIF:	for simple applications that just need the image data;
+    TIFF:	for more complex applications that need to store extra
+		data about an image, such as color correction curves.
+JFIF is a simple, restrictive, but easily processed format.  TIFF is a
+complex format that will let you represent almost anything you could want,
+but it is less portable than JFIF since different applications tend to
+implement different subsets of TIFF.
+
+These formats are defined by the following documents:
+
+jfif.ps.gz		JFIF 1.02 specification (in PostScript format)
+TIFF6.ps.Z		TIFF 6.0 specification (in PostScript format)
+TIFFTechNote2.txt.gz	TIFF Technical Note #2 (draft, text format)
+
+The JPEG incorporation scheme found in the TIFF 6.0 spec of 3-June-92 has a
+number of serious problems.  IJG does not recommend the use of the TIFF 6.0
+design (TIFF Compression tag 6).  Instead, we recommend the use of the JPEG
+design proposed by TIFF Technical Note #2 (Compression tag 7).
+
+jfif.ps.gz is available in this archive (ftp.uu.net: graphics/jpeg),
+as is TIFFTechNote2.txt.gz.  TIFF6.ps.Z is available by anonymous FTP
+from sgi.com (192.48.153.1), file graphics/tiff/TIFF6.ps.Z.
+
+Each of these documents assumes you have the JPEG standard, but is otherwise
+self-contained.
+
+----
+
+In the USA, copies of the ISO JPEG standard may be ordered from ANSI Sales
+at (212) 642-4900, or from Global Engineering Documents at (800) 854-7179.
+(Global will take credit card orders, ANSI won't.)  It's not cheap: as of
+1992, ANSI was charging $95 for Part 1 and $47 for Part 2, plus 7%
+shipping/handling.  ITU is an alternative source for official copies of
+the JPEG standard.
+
+The standard is divided into two parts, Part 1 being the actual specification,
+while Part 2 covers compliance testing methods.  Part 1 is titled "Digital
+Compression and Coding of Continuous-tone Still Images, Part 1: Requirements
+and guidelines" and has document numbers ISO/IEC IS 10918-1, ITU-T T.81.
+Part 2 is titled "Digital Compression and Coding of Continuous-tone Still
+Images, Part 2: Compliance testing" and has document numbers ISO/IEC IS
+10918-2, ITU-T T.83.
+
+Extensions to the original JPEG standard are defined in JPEG Part 3, a new
+ISO document.  Part 3 is undergoing ISO balloting and is expected to be
+approved by the end of 1995; it will have document numbers ISO/IEC IS
+10918-3, ITU-T T.84.
+
+Part 3 defines a concrete file format called SPIFF, which is likely to
+gradually replace JFIF; SPIFF/JPEG files should be readable by most existing
+JFIF decoders, so the transition should be transparent to most users.  As of
+late 1995, there are no implementations of SPIFF, but IJG intends to support
+it in our next major release.

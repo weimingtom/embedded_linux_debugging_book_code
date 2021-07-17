@@ -1,0 +1,29 @@
+1	/* $Id: test_seg_fault.c
+2	 * $Author: rockins
+3	 * $Date: Oct 11,2006
+4	 * $Detail: intend to Illustrate the segment-fault 
+5	 * programming error's reason
+6	 */
+7	#include <stdio.h>
+8	#include <stdlib.h>
+9	
+10	int main(int argc, char *argv[])
+11	{
+12	    unsigned char	*p;
+13	
+14	    strcpy(p, "abcde");
+15	
+16	    return (0);
+17	}
+Line number 18 out of range; test_seg_fault.c has 17 lines.
+Breakpoint 1 at 0x83c8: file test_seg_fault.c, line 14.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Program not restarted.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Starting program:  
+Don't know how to run.  Try "help target".
+Remote debugging using 202.115.26.25:9000
+0x40001690 in ?? ()
+Num Type           Disp Enb Address    What
+1   breakpoint     keep y   0x000083c8 in main at test_seg_fault.c:14
+The program is running.  Exit anyway? (y or n) 

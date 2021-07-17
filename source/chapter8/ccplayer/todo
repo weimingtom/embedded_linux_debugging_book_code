@@ -1,0 +1,26 @@
+/** 
+ * $Id: TODO 9 2008-02-17 08:09:01Z rockins $ 
+ * $Date: 2008-02-17 16:09:01 +0800 (日, 17  2月 2008) $
+ */
+
+TODO list:
+
+1. add ping pong double buffer management [done, improve performance]
+
+2. add cycle queue to manage mediate buffer between decode and output
+
+3. design a simple and stable interface for demux, decode and output
+
+4. modulize demux, decode, output using dl library
+
+5. add mp3 audio decode support
+
+6. time synchronization between audio and video
+
+7. add gui support.
+
+8. add psuedo exception handle
+
+9. global parameter setting, runtime detect
+
+10. variable playback interval
